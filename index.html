@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" type="image/png" sizes="16x16" href="image/Novo_Projeto_-_2024-06-04T195308.070_1_1.png">
+
+
+    <title>Termo de Adesão</title>
+
+    <style>
+      /* reset básico */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", Arial, sans-serif;
+        background-color: #fafafa;
+        color: #222;
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Cabeçalho fixo */
+      header {
+        background: #fff;
+        padding: 1rem 2rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      header h1 {
+        font-weight: 700;
+        font-size: 1.4rem;
+        color: #333;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1.25rem;
+      }
+
+      nav a {
+        text-decoration: none;
+        font-weight: 600;
+        color: #555;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover,
+      nav a:focus {
+        color: #4f46e5;
+        outline: none;
+      }
+
+      /* Hero */
+      section.hero {
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        color: white;
+        text-align: center;
+        padding: 5rem 1rem 6rem;
+      }
+
+      .hero h2 {
+        font-size: 2.75rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        line-height: 1.1;
+      }
+
+      .hero p {
+        font-size: 1.125rem;
+        max-width: 600px;
+        margin: 0 auto 2.5rem;
+      }
+
+      .hero a.button {
+        background: white;
+        color: #6366f1;
+        padding: 0.8rem 2rem;
+        border-radius: 9999px;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 5px 10px rgba(99, 102, 241, 0.3);
+        transition: background 0.3s ease, color 0.3s ease;
+      }
+
+      .hero a.button:hover,
+      .hero a.button:focus {
+        background: #4f46e5;
+        color: white;
+        outline: none;
+      }
+
+      /* Main section */
+      main#form {
+        flex-grow: 1;
+        max-width: 900px;
+        margin: 3rem auto 6rem;
+        padding: 0 1rem;
+      }
+
+      main#form h3 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        color: #333;
+      }
+
+      /* Descrição explicativa do formulário */
+      .prose {
+        background: #f3f4f6;
+        color: #4b5563;
+        max-width: 700px;
+        margin: 0 auto 2.5rem;
+        padding: 1.5rem 2rem;
+        border-radius: 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        box-shadow: 0 2px 6px rgb(0 0 0 / 0.05);
+      }
+
+      .prose p + p {
+        margin-top: 1rem;
+      }
+
+      /* iframe Google Form */
+      iframe {
+        width: 100%;
+        height: 650px;
+        border: none;
+        border-radius: 1rem;
+        box-shadow: 0 8px 16px rgb(0 0 0 / 0.1);
+        transition: box-shadow 0.3s ease;
+      }
+
+      iframe:hover,
+      iframe:focus {
+        box-shadow: 0 12px 24px rgb(0 0 0 / 0.15);
+        outline: none;
+      }
+
+      /* Termo - seção */
+      section#termo {
+        background: white;
+        max-width: 800px;
+        margin: 0 auto 6rem;
+        padding: 3rem 2rem;
+        border-radius: 0.75rem;
+        box-shadow: 0 0 10px rgb(0 0 0 / 0.07);
+        text-align: center;
+      }
+
+      section#termo h4 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #222;
+      }
+
+      section#termo p {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 2rem;
+        line-height: 1.5;
+      }
+
+      section#termo a.pdf-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #6366f1;
+        color: white;
+        padding: 0.8rem 1.75rem;
+        border-radius: 9999px;
+        font-weight: 600;
+        text-decoration: none;
+        box-shadow: 0 5px 10px rgba(99, 102, 241, 0.4);
+        transition: background 0.3s ease;
+        text-align: justify;
+      }
+
+      section#termo a.pdf-button:hover,
+      section#termo a.pdf-button:focus {
+        background: #4f46e5;
+        outline: none;
+      }
+
+      /* Footer */
+      footer {
+        background: #2d2835;
+        color: #e0e7ff;
+        padding: 3rem 1rem;
+        text-align: center;
+        font-size: 0.875rem;
+        line-height: 1.4;
+        user-select: none;
+      }
+
+      footer h5 {
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        font-size: 1rem;
+      }
+
+      footer ul {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 1rem;
+        display: inline-flex;
+        gap: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      footer ul li {
+        margin: 0;
+      }
+
+      footer a {
+        color: #a5b4fc;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+      }
+
+      footer a:hover,
+      footer a:focus {
+        color: #c7d2fe;
+        outline: none;
+      }
+
+      /* Copyright */
+      footer p.copyright {
+        margin-top: 2rem;
+        opacity: 0.5;
+      }
+
+      /* Popup styling */
+      #popup-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10000;
+      }
+
+      #popup {
+        background: white;
+        max-width: 600px;
+        padding: 2rem 2.5rem;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        position: relative;
+        font-size: 1rem;
+        color: #222;
+        line-height: 1.5;
+      }
+
+      #popup p + p {
+        margin-top: 1rem;
+      }
+
+      #popup-close-btn {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: #4f46e5;
+        border: none;
+        color: white;
+        font-size: 1.25rem;
+        font-weight: 700;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        display: none; /* hidden until 30s pass */
+        transition: background 0.3s ease;
+      }
+
+      #popup-close-btn:hover {
+        background: #4338ca;
+      }
+
+      #countdown-timer {
+        font-weight: 600;
+        margin-top: 1rem;
+        color: #555;
+        text-align: center;
+      }
+
+      /* Responsividade do popup */
+      @media (max-width: 640px) {
+        #popup {
+          margin: 0 1rem;
+          padding: 1.5rem 1.75rem;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#form">Formulário</a></li>
+          <li><a href="#termo">Termo</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Popup -->
+    <div id="popup-overlay" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+      <div id="popup">
+        <h3 id="popup-title">Importante - Leia com atenção</h3>
+        <p>
+          Este formulário tem como objetivo formalizar sua
+          <strong>adesão ao trabalho voluntário</strong>, conforme previsto na
+          <strong>Lei nº 9.608/1998</strong>. Ao preenchê‑lo e marcar a opção de
+          aceite, você declara que está atuando de forma
+          <strong
+            >espontânea, sem vínculo empregatício e sem expectativa de
+            remuneração</strong
+          >.
+        </p>
+        <p>
+          Seu consentimento é registrado digitalmente e possui
+          <strong>validade legal</strong>, de acordo com o
+          <strong>Marco Civil da Internet (Lei nº 12.965/2014)</strong>, que
+          reconhece registros digitais com identificação, IP e data como meio de
+          prova.
+        </p>
+        <p>
+          Recomendamos que você leia o <em>Termo de Voluntariado</em> completo
+          antes de enviar suas respostas. Ao prosseguir, você estará
+          <strong>aceitando os termos e condições</strong> do serviço
+          voluntário.
+        </p>
+        <div id="countdown-timer">Você poderá fechar este aviso em <span id="timer">30</span> segundos</div>
+        <button id="popup-close-btn" aria-label="Fechar aviso">×</button>
+      </div>
+    </div>
+
+    <main id="form">
+      <div class="prose">
+        <p>
+          Este formulário tem como objetivo formalizar sua
+          <strong>adesão ao trabalho voluntário</strong>, conforme previsto na
+          <strong>Lei nº 9.608/1998</strong>. Ao preenchê‑lo e marcar a opção de
+          aceite, você declara que está atuando de forma
+          <strong
+            >espontânea, sem vínculo empregatício e sem expectativa de
+            remuneração</strong
+          >.
+        </p>
+        <p>
+          Seu consentimento é registrado digitalmente e possui
+          <strong>validade legal</strong>, de acordo com o
+          <strong>Marco Civil da Internet (Lei nº 12.965/2014)</strong>, que
+          reconhece registros digitais com identificação, IP e data como meio de
+          prova.
+        </p>
+        <p>
+          Recomendamos que você leia o <em>Termo de Voluntariado</em> completo
+          antes de enviar suas respostas. Ao prosseguir, você estará
+          <strong>aceitando os termos e condições</strong> do serviço
+          voluntário.
+        </p>
+      </div>
+
+      <!-- Substitua o link abaixo pelo seu formulário Google Forms embed -->
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSfERrZVFFkfsaTC688zy6QLEnbi_yNFJhUqVU1vgVBDJ5OquA/viewform?usp=header"
+        loading="lazy"
+        title="Formulário de Voluntariado"
+      >
+        Carregando…
+      </iframe>
+    </main>
+
+    <section id="termo">
+      <h4>Termo de Voluntariado (Lei 9.608/1998)</h4>
+      <p>
+        Eu, staff, portador(a) do documento de identificação descrito no
+        formulário, declaro para os devidos fins que: Estou participando
+        voluntariamente das atividades propostas pela Arcade Lunar, sem vínculo
+        empregatício, vínculo associativo ou qualquer outra forma de remuneração
+        financeira ou vantagem patrimonial. Estou ciente de que minha
+        participação é livre e espontânea, podendo ser interrompida a qualquer
+        momento, sem necessidade de justificativa. Reconheço que não receberei
+        salário, benefício, seguro ou qualquer outro direito trabalhista ou
+        previdenciário decorrente do exercício da atividade voluntária.
+        Comprometo-me a cumprir as normas internas da Arcade Lunar e atuar de
+        forma ética e responsável durante o período de voluntariado. Estou
+        ciente de que eventuais danos causados por mim, decorrentes de
+        negligência ou imprudência, poderão gerar responsabilidade civil.
+        Declaro que forneci dados verdadeiros e completos para cadastro e
+        acompanhamento da atividade voluntária. Estou ciente das condições
+        acima, aceitando-as integralmente e assinando este termo para fins de
+        comprovação.
+      </p>
+    </section>
+
+ <footer id="contato">
+  <div>
+    <h5>Sobre o Projeto</h5>
+    <p>
+      Esta página foi criada para formalizar o processo de adesão ao
+      trabalho voluntário, de acordo com a Lei 9.608/1998.
+    </p>
+  </div>
+
+  <!-- Seção das logos -->
+  <div class="footer-logos" style="margin: 3rem 0; display: flex; justify-content: center;
+            gap: 4rem; flex-wrap: wrap; align-items: center;">
+
+    <!-- Logo Governo -->
+    <a href="https://www.gov.br/" target="_blank" rel="noopener" aria-label="Site do Governo Federal">
+      <img src="image/2023_br_govfederal_marcaoficial_rgb.png" alt="Logo Governo Federal" style="height: 170px; object-fit: contain;" />
+    </a>
+
+    <!-- Logo Empresa -->
+    <a href="https://arcadelunar.com.br" target="_blank" rel="noopener" aria-label="Site da Sua Empresa">
+      <img src="image/Novo_Projeto_-_2024-06-04T195308.070_1_1.png" alt="Logo da Empresa" style="height: 180px; object-fit: contain;" />
+    </a>
+
+    <!-- Logo LGPD -->
+    <a href="https://www.gov.br/governodigital/pt-br/lgpd-pagina-do-cidadao/o-que-e-a-lgpd" target="_blank" rel="noopener" aria-label="Informações sobre LGPD">
+      <img src="image/logo-LGPD-3.png" alt="Logo LGPD" style="height: 140px; object-fit: contain;" />
+    </a>
+  </div>
+
+  <p class="copyright">
+    © <span id="year"></span> Lunar Inc. Todos os direitos reservados.
+  </p>
+</footer>
+
+
+    <script>
+  // Atualiza o ano no rodapé
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  /* ---------- POPUP ---------- */
+  const popupOverlay   = document.getElementById("popup-overlay");
+  const countdownBox   = document.getElementById("countdown-timer");
+  const timerSpan      = document.getElementById("timer");
+  const closeBtn       = document.getElementById("popup-close-btn");
+
+  let secondsLeft = 30;
+  let countdownInterval;
+
+  // Verifica se já vimos o contador antes
+  const alreadySeen = localStorage.getItem("volunteerPopupSeen") === "true";
+
+  function startCountdown() {
+    timerSpan.textContent = secondsLeft;
+    countdownInterval = setInterval(() => {
+      secondsLeft--;
+      timerSpan.textContent = secondsLeft;
+      if (secondsLeft <= 0) {
+        clearInterval(countdownInterval);
+        countdownBox.style.display = "none";
+        closeBtn.style.display = "block";
+        closeBtn.focus();
+      }
+    }, 1000);
+  }
+
+  function openPopup() {
+    popupOverlay.style.display = "flex";
+
+    if (alreadySeen) {
+      // visitas posteriores: sem contador, botão visível
+      countdownBox.style.display = "none";
+      closeBtn.style.display = "block";
+    } else {
+      // primeira visita: esconde botão, inicia contador
+      countdownBox.style.display = "block";
+      closeBtn.style.display = "none";
+      startCountdown();
+    }
+  }
+
+  // Abre o popup depois que o DOM carregar
+  document.addEventListener("DOMContentLoaded", openPopup);
+
+  // Fecha o popup
+  closeBtn.addEventListener("click", () => {
+    popupOverlay.style.display = "none";
+    // Marca que já vimos o popup com contador
+    localStorage.setItem("volunteerPopupSeen", "true");
+    clearInterval(countdownInterval);
+  });
+</script>
+
+  </body>
+</html>
